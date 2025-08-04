@@ -1,0 +1,55 @@
+
+Otávio Pacheco - trabalho de sistema solar (Computação Gráfica)
+
+
+✅
+❌
+
+     //         Lista de funcionalidades solicitadas pelo professor         \\
+    // - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - \\
+
+✅ Dados reais (escala, distância, coordenadas)
+
+✅ Shader animado para o Sol
+
+❌ Outro shader qualquer
+
+✅ Barra de play com tempo real e pausa da simulação
+
+✅ 3 objetos que não sejam planetas (Lua, Pioneer 10 e Pioneer 11)
+
+✅ Desenho das rotas (órbitas)
+
+❌ Animação, como a disponibilizada pelo professor (substituído por algo simplificado)
+
+
+     //          Outras funcionalidades         \\
+    // - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - \\
+
+✅ Câmera solta (wasd, shift, space, scroll para velocidade e mouse para girar a câmera)
+
+✅ Câmera presa que segue os planetas ('Z' e 'X' altera os planetas)
+
+	-> 'C' - alternar entre as câmeras
+
+
+
+     //          Problemas encontrados          \\
+    // - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - \\
+
+* Meu projeto tem dois loops: requestAnimationFrame para os objetos do Webgl2, e
+  setInterval para movimentação de câmera. Quando o interval é 17 ms, o request
+  acontece mais vezes que o interval, fazendo executar múltiplas vezes alguns dias.
+  Definir em 16 ms faz o interval ocorrer mais do que o request, pulando alguns dias.
+
+	-> Depois de adicionar a lógica para a barra de percorrer a simulação, isso
+	   não mais foi um problema, pois permitiu executar os dias de forma não se-
+	   quencial. Além do mais, isso acaba não sendo perceptível na animação.
+
+* Representação dos planetas. Utilizar uma escala de 0.0001 faz com que a Lua e a Ter-
+  ra fiquem praticamente dentro uma da outra. Porém, utilizar uma escala de 0.001  faz
+  com que o Sol fique extremamente grande, e os planetas ficam muito longe do Sol. Assim,
+  fica difícil visualizar os outros planetas (o Sol tem diâmetro aproximadamente 100x
+  maior que o da Terra). Optei pela escala 0.0001.
+
+
