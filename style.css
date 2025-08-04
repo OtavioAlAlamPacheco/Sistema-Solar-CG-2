@@ -1,0 +1,64 @@
+@import url("https://webgl2fundamentals.org/webgl/resources/webgl-tutorials.css");
+
+/* Remove margens e impede a barra de rolagem */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000; /* Garante um fundo preto */
+}
+
+/* Cria um contexto de posicionamento para os controlos */
+body {
+    position: relative;
+}
+
+/* Garante que o canvas ocupe todo o espaço */
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Posiciona a div de controlos sobre o canvas */
+.controls {
+    position: absolute;
+    bottom: 20px; /* Distância da parte inferior */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza a div horizontalmente */
+    
+    background-color: rgba(40, 40, 40, 0.75); /* Fundo cinza escuro semi-transparente */
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+    color: #f0f0f0;
+    font-family: sans-serif;
+    user-select: none; /* Impede que o texto seja selecionado */
+}
+
+/* Estilização do botão */
+#playPauseBtn {
+    background-color: #555;
+    color: white;
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#playPauseBtn:hover {
+    background-color: #666;
+}
+
+/* Estilização da barra de tempo */
+#timeSlider {
+    width: 350px; /* Aumenta a largura da barra */
+}
